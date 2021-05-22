@@ -1,0 +1,22 @@
+{
+    "autoload": {
+
+        "classmap": [
+
+            "./"
+
+        ]
+    },
+    "name": "femkepetter/portfolio-project",
+    "description": "Digital portfolio and resume from Femke Petter",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Femke Petter",
+            "email": "fnpetter@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
