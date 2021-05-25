@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-class AboutModel extends Model
+class ContactModel extends Model
 {
     // Name of the table
-    protected $model = "about";
+    protected $model = "contact";
 
     // Max number of records when fetching all records from table
     protected $limit;

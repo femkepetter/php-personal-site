@@ -27,9 +27,8 @@
                     </div>
                     <div class="col-11 about-col">
                         <?php foreach ($vars['about'] as $about) : ?>
-                            <div><?= $about->first_name ?></div>
-                            <div><?= $about->last_name ?></div>
-                            <div><?= $about->birthday ?></div>
+                            <div><?= $about->first_name ?> <?= $about->last_name ?></div>
+                            <div>Geboortedatum: <?= $about->birthday ?></div>
                             <div><?= $about->profile_pitch ?></div>
                         <?php endforeach ?>
                     </div>

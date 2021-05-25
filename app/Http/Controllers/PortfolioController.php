@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EducationModel;
+use App\Models\PortfolioModel;
 use App\Libraries\View;
 
-class EducationController extends Controller
+class PortfolioController extends Controller
 {
 
     public function index() //GET
     {
-        $educationModel = new EducationModel();
+        $portfolioModel = new PortfolioModel();
 
-        View::render('educations/index.view', [
-            'educations' => $educationModel::all(),
+        View::render('portfolio/index.view', [
+            'portfolio' => $portfolioModel::all(),
         ]);
     }
 
@@ -29,7 +29,7 @@ class EducationController extends Controller
     {
         $data = [];
 
-        EducationModel::update($data, 1);
+        PortfolioModel::update($data, 1);
     }
 
     public function destroy(int $id)

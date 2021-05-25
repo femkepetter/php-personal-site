@@ -13,10 +13,7 @@ class UserModel extends Model
     // Non writable fields
     protected $guarded = [
         'id',
-        'updated',
         'deleted',
-        'updated_by',
-        'deleted_by',
     ];
 
     public function __construct()

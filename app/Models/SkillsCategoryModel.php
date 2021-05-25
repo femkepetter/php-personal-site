@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-class AboutModel extends Model
+class SkillsCategoryModel extends Model
 {
     // Name of the table
-    protected $model = "about";
+    protected $model = "skills_category";
 
     // Max number of records when fetching all records from table
     protected $limit;
