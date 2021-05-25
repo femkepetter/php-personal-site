@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AboutModel;
+use App\Models\ContactModel;
 use App\Libraries\View;
 
-class AboutController extends Controller
+class ContactController extends Controller
 {
 
     public function index()
     {
-        $aboutModel = new AboutModel();
+        $contactModel = new ContactModel();
 
-        View::render('about/index.view', [
-            'about' => $aboutModel::all(),
+        View::render('contact/index.view', [
+            'contact' => $contactModel::all(),
         ]);
     }
 
@@ -29,7 +29,7 @@ class AboutController extends Controller
     {
         $data = [];
 
-        AboutModel::update($data, 1);
+        ContactModel::update($data, 1);
     }
 
     public function destroy(int $id)

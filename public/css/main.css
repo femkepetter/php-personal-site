@@ -56,11 +56,6 @@ nav ul a {
   padding: 0;
 }
 
-.table-of-contents a.active {
-  font-weight: 600;
-  border-left: 3px solid #ff6e5d;
-}
-
 .table-of-contents a {
   color: black;
 }
@@ -68,6 +63,11 @@ nav ul a {
 .table-of-contents a:hover {
   color: black;
   border-left: 3px solid #ff6e5d;
+}
+
+.active {
+  border-left: 3px solid #ff6e5d;
+  font-weight: 800 !important;
 }
 
 nav ul li.logo {
@@ -136,6 +136,7 @@ nav ul li.logo {
 
   main.content {
     padding-left: 0px;
+    padding-top: 64px;
   }
 }
 

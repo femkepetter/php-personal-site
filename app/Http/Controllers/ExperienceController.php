@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserModel;
+use App\Models\ExperienceModel;
 use App\Libraries\View;
 use App\Libraries\MySql;
 
-class UserController extends Controller
+class ExperienceController extends Controller
 {
 
     public function index() //GET
     {
-        $userModel = new UserModel();
+        $experienceModel = new ExperienceModel();
 
-        View::render('users/index.view', [
-            'users' => $userModel::all(),
-            'foods' => 'Pannekoeken',
+        View::render('experience/index.view', [
+            'experience' => $experienceModel::all(),
         ]);
     }
 
@@ -36,16 +35,15 @@ class UserController extends Controller
     public function update() //PUT
     {
         $data = [
-            //EXAMPLE:
-            // 'first_name' => "Code",
-            // 'last_name' => "Gorilla",
-            // 'email' => "toby@codegorilla.nl",
-            // 'password' => "q3234234q3213^^!^w23123",
-            // 'birthday' => "1990-12-31",
-            // 'created' => date("Y-m-d H:i:s"),
+            'first_name' => "Code",
+            'last_name' => "Gorilla",
+            'email' => "toby@codegorilla.nl",
+            'password' => "q3234234q3213^^!^w23123",
+            'birthday' => "1990-12-31",
+            'created' => date("Y-m-d H:i:s"),
         ];
 
-        UserModel::update($data, 1);
+        ExperienceModel::update($data, 1);
     }
 
     /**
