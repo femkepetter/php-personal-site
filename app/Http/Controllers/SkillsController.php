@@ -22,10 +22,11 @@ class SkillsController extends Controller
             $sql = "SELECT * FROM skills LEFT JOIN skills_score ON skills.score_id = skills_score.id WHERE category_id=" . $cat->id;
             $res = MySql::query($sql);
             $skills[$cat->id] = $res->fetchAll(PDO::FETCH_ASSOC);
-        }
+        };
 
         View::render('skills/index.view', [
             'skills' => $skills,
+            'categories' => $categories,
         ]);
     }
 
