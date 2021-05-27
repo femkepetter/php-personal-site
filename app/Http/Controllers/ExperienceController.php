@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\ExperienceModel;
+use App\Models\ExperienceTaskModel;
 use App\Libraries\View;
 use App\Libraries\MySql;
+use PDO;
 
 class ExperienceController extends Controller
 {
@@ -12,12 +14,23 @@ class ExperienceController extends Controller
     public function index() //GET
     {
         $experienceModel = new ExperienceModel();
+        $experience = $experienceModel::all();
+
+        $data = [];
+
+        foreach ($experience as $key => $exp) {
+            $sql = "SELECT * FROM experience_tasks WHERE experience_id =" . $exp->id;
+            $res = MySql::query($sql);
+            $data[] = [
+                'experience'  => $exp,
+                'tasks'       => $res->fetchAll(PDO::FETCH_ASSOC),
+            ];
+        };
 
         View::render('experience/index.view', [
-            'experience' => $experienceModel::all(),
+            'data' => $data,
         ]);
     }
-
     /**
      * Store a user record into the database
      */
